@@ -1,0 +1,9 @@
+Solution of creating DRBD Cluster:
+	1. Integrate VBOX with Vagrant
+	2. Configure Vagrant to have each PC carry a seperate IP address
+	3. Enable and install repo of DRBD on each node (VM1 & VM2) rpm -ivh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+	4. 
+	
+	Resources to consult:
+	https://www.learnitguide.net/2016/07/how-to-install-and-configure-drbd-on-linux.html
+	
