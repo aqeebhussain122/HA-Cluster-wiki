@@ -6,4 +6,4 @@ Solution of creating DRBD Cluster:
 	
 	Resources to consult:
 	https://www.learnitguide.net/2016/07/how-to-install-and-configure-drbd-on-linux.html
-	
+	https://unix.stackexchange.com/questions/29999/why-are-my-two-virtual-machines-getting-the-same-ip-address
