@@ -57,6 +57,22 @@ common {
   }
 }
 
+Protocol C is one of three protocols which DRBD can use. In our case the use of protocol C is important because it is asynchronous data transfer.
+
+7. Open the .res file which can have any name of your choice on the start of it for example: name.res. You should then add the following data:
+
+global { 
+	usage-count no;
+}
+common {
+	protocol C; - Remember to always end your statements with the semi-colon otherwise you will get errors
+}
+resource (name of resource) {
+	on (hostname of your VM) {
+		device (name of device);
+		disk (name of disk used);
+	}
+}
 
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
@@ -70,6 +86,10 @@ https://www.techrepublic.com/article/how-to-add-new-drives-to-a-virtualbox-virtu
 https://serverstack.wordpress.com/2017/05/31/install-and-configure-drbd-cluster-on-rhel7-centos7/
 
 https://docs.linbit.com/man/v9/drbd-conf-5/
+
+https://linuxhandbook.com/install-drbd-linux/
+
+http://yallalabs.com/linux/how-to-install-and-configure-drbd-cluster-on-rhel7-centos7/
 
 #### To further understand LVMs consult this guide:
 https://www.howtoforge.com/linux_lvm
