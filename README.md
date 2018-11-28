@@ -39,3 +39,6 @@ http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
 https://www.atlantic.net/hipaa-compliant-database-hosting/how-to-configure-lvm-drbd/
 https://www.digitalocean.com/community/tutorials/how-to-use-lvm-to-manage-storage-devices-on-ubuntu-16-04
 https://www.techrepublic.com/article/how-to-add-new-drives-to-a-virtualbox-virtual-machine/
+
+#### To further understand LVMs consult this guide:
+https://www.howtoforge.com/linux_lvm
