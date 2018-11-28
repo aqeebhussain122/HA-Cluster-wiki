@@ -93,5 +93,7 @@ http://yallalabs.com/linux/how-to-install-and-configure-drbd-cluster-on-rhel7-ce
 
 https://www.quora.com/What-is-a-Linux-block-device
 
+https://www.youtube.com/watch?time_continue=337&v=oGIpo1SoSdY
+
 #### To further understand LVMs consult this guide:
 https://www.howtoforge.com/linux_lvm
