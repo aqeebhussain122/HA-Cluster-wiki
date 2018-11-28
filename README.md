@@ -95,5 +95,9 @@ https://www.quora.com/What-is-a-Linux-block-device
 
 https://www.youtube.com/watch?time_continue=337&v=oGIpo1SoSdY
 
+#Troubleshooting connections:
+
+Since there are ports involved, check the port availability and if the port is closed then allow it through the firewall
+
 #### To further understand LVMs consult this guide:
 https://www.howtoforge.com/linux_lvm
