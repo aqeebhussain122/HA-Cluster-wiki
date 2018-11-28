@@ -16,9 +16,13 @@ ip addr show - Will show the IP address, ifconfig is not the default command
 ssh username@ip-address (Format of accessing the machines via SSH)
 
 ## Configuration and Installation of DRBD Cluster
-1. Install and update both nodes. 
+1. Install required packages and update both nodes. 
 	sudo yum -y update 
 	yum -y install gcc make automake autoconf libxslt libxslt-devel flex rpm-build kernel-devel
-	
+	rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+	rpm -Uvh
+2. Install DRBD repository and import GPG key  
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
