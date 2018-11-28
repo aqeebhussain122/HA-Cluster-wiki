@@ -32,7 +32,8 @@ A seperate disk will be needed for DRDB as it is an entire block device which is
 In virtual box do the following:
 1. Power off the VM 
 2. Access the storage section and add a new hard disk titled by /dev/sdb for clarity
-	We have added a second disk which will act as the block device for the DRDB to be configured upon 
+	We have added a second disk which will act as the block device for the DRDB to be configured upon
+	
 
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
@@ -42,6 +43,8 @@ https://www.atlantic.net/hipaa-compliant-database-hosting/how-to-configure-lvm-d
 https://www.digitalocean.com/community/tutorials/how-to-use-lvm-to-manage-storage-devices-on-ubuntu-16-04
 
 https://www.techrepublic.com/article/how-to-add-new-drives-to-a-virtualbox-virtual-machine/
+
+https://serverstack.wordpress.com/2017/05/31/install-and-configure-drbd-cluster-on-rhel7-centos7/
 
 #### To further understand LVMs consult this guide:
 https://www.howtoforge.com/linux_lvm
