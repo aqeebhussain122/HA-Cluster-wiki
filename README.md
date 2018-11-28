@@ -47,7 +47,17 @@ In virtual box do the following:
 	
 5. Once the first four steps are done it's now time for the steps of configuration. Change your directory to /etc and you should find drbd.conf, this is the sample configuration for you to fill in; in addition there is a directory called drbd.d. At this point you should now copy the drbd.conf file into the drbd.d directory
 
-	
+6. Open the file global_common.conf, create a backup of this file before editing it. And then insert the following into the file
+global {
+  usage-count yes;
+}
+common {
+  net {
+    protocol C;
+  }
+}
+
+
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
 
