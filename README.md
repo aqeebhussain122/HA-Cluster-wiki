@@ -91,5 +91,7 @@ https://linuxhandbook.com/install-drbd-linux/
 
 http://yallalabs.com/linux/how-to-install-and-configure-drbd-cluster-on-rhel7-centos7/
 
+https://www.quora.com/What-is-a-Linux-block-device
+
 #### To further understand LVMs consult this guide:
 https://www.howtoforge.com/linux_lvm
