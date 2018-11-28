@@ -24,5 +24,18 @@ ssh username@ip-address (Format of accessing the machines via SSH)
 2. Install DRBD repository and import GPG key  
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+3. Install drbd
+yum install drbd90-utils kmod-drbd90
+
+(Do this for both nodes)
+A seperate disk will be needed for DRDB as it is an entire block device which is what we need
+In virtual box do the following:
+1. Power off the VM 
+2. Access the storage section and add a new hard disk titled by /dev/sdb for clarity
+	We have added a second disk which will act as the block device for the DRDB to be configured upon 
+
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
+https://www.atlantic.net/hipaa-compliant-database-hosting/how-to-configure-lvm-drbd/
+https://www.digitalocean.com/community/tutorials/how-to-use-lvm-to-manage-storage-devices-on-ubuntu-16-04
+https://www.techrepublic.com/article/how-to-add-new-drives-to-a-virtualbox-virtual-machine/
