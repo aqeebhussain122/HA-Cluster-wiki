@@ -1,4 +1,6 @@
-# What is a DRBD Cluster?
+# This guide is for RHEL/CentOS machines only
+
+## What is a DRBD Cluster?
 A DRBD cluster (Distributed Replicated Block Device) is a cluster. A cluster being an instance of more than one server to achieve the same objective.
 In a case where real-time synchronized storage is required between block device storage there is the existence of DRBD. This works in the format of having two nodes which require a real-time rate of high availabilty. DRBD is mostly used within data center disaster recovery situations. The DRBD component allows two nodes to be synced meaning if one node within a data center location was destroyed, then with regards to DRBD; the data which is managed is still accessible by one of the remaining nodes thanks to the presence of DRBD.
 
@@ -37,7 +39,10 @@ In virtual box do the following:
 3. Once the installation is done issue the next command to ensure the configuration is picked up by the system kernel: lsmod | grep -i drbd
 
 4. If that does not work and nothing is found then issue the following command: sudo find / -name drbd.ko
-	The use of this file is 
+	The use of this command is to search the entire filesystem from root directory level to locate the location of the drbd.ko file 	which is the kernel file associated to drbd.ko
+	
+5. Once the first four steps are done it's now time for the steps of configuration. Change your directory to /etc and you should find drbd.conf, this is the sample configuration for you to fill in; in addition there is a directory called drbd.d. At this point you should now copy the drbd.conf file into the drbd.d directory
+
 	
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
