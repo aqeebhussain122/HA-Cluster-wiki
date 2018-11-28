@@ -15,13 +15,17 @@ Once the machine is configured you should then be able to have an individual IP 
 
 #### Useful commands in CentOS7 glossary
 ip addr show - Will show the IP address, ifconfig is not the default command
+
 ssh username@ip-address (Format of accessing the machines via SSH)
 
 ## Configuration and Installation of DRBD Cluster
 1. Install required packages and update both nodes. 
 	sudo yum -y update 
+	
 	yum -y install gcc make automake autoconf libxslt libxslt-devel flex rpm-build kernel-devel
+	
 	rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+	
 	rpm -Uvh
 2. Install DRBD repository and import GPG key  
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
@@ -54,6 +58,8 @@ https://www.digitalocean.com/community/tutorials/how-to-use-lvm-to-manage-storag
 https://www.techrepublic.com/article/how-to-add-new-drives-to-a-virtualbox-virtual-machine/
 
 https://serverstack.wordpress.com/2017/05/31/install-and-configure-drbd-cluster-on-rhel7-centos7/
+
+https://docs.linbit.com/man/v9/drbd-conf-5/
 
 #### To further understand LVMs consult this guide:
 https://www.howtoforge.com/linux_lvm
