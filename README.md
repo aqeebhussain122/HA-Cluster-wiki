@@ -34,7 +34,11 @@ In virtual box do the following:
 2. Access the storage section and add a new hard disk titled by /dev/sdb for clarity
 	We have added a second disk which will act as the block device for the DRDB to be configured upon
 	
+3. Once the installation is done issue the next command to ensure the configuration is picked up by the system kernel: lsmod | grep -i drbd
 
+4. If that does not work and nothing is found then issue the following command: sudo find / -name drbd.ko
+	The use of this file is 
+	
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
 
