@@ -94,6 +94,11 @@ It is then time process the command to start the service again on BOTH NODES: su
 ### firewall rule: 
 firewall-cmd --permanent --add-rich-rules='rule family="ipv4" source address ="(Your IP address) port port="7788" protocol="tcp" accept
 
+# BEWARE
+Your DRBD process will not remain in the next boot-up if you do not add the following:
+ echo drbd > /etc/modules-load.d/drbd.conf
+ 
+Ensure this line is added so that you're able to keep your kernel file included every time you boot up, if you don't include the above command you will have issues to keep the drbd in a constant working state. 
 
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
