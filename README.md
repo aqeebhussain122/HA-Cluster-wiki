@@ -102,6 +102,8 @@ Ensure this line is added so that you're able to keep your kernel file included 
 
 After every set of changes make sure to update the drbd service
 
+If resource is open and you can't reset metadata to reconfigure the VMs then detach the 
+
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
 
@@ -128,6 +130,8 @@ https://serverfault.com/questions/452693/drbd-status-uptodate-diskless
 https://lists.gt.net/drbd/users/27942
 
 https://serverfault.com/questions/804217/drbd-on-raw-disk-block-device
+
+https://hk.saowen.com/a/4863a03aade28300f5646ef42eb1c04e7ec107620941030757dbfb5a6c8ca541
 
 #### Troubleshooting connections:
 
