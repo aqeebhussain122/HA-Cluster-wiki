@@ -100,6 +100,8 @@ Your DRBD process will not remain in the next boot-up if you do not add the foll
  
 Ensure this line is added so that you're able to keep your kernel file included every time you boot up, if you don't include the above command you will have issues to keep the drbd in a constant working state. 
 
+After every set of changes make sure to update the drbd service
+
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
 
