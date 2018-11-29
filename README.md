@@ -123,6 +123,8 @@ https://www.youtube.com/watch?time_continue=337&v=oGIpo1SoSdY
 
 https://serverfault.com/questions/452693/drbd-status-uptodate-diskless
 
+https://lists.gt.net/drbd/users/27942
+
 #### Troubleshooting connections:
 
 Since there are ports involved, check the port availability and if the port is closed then allow it through the firewall
