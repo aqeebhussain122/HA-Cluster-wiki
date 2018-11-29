@@ -33,6 +33,8 @@ rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 3. Install drbd
 yum install drbd90-utils kmod-drbd90
 
+Ensuring the modules at boot, ensure you can access your root account and enter the following command: echo drb > /etc/modules-load.d/drbd.conf 
+
 (Do this for both nodes)
 A seperate disk will be needed for DRDB as it is an entire block device which is what we need
 In virtual box do the following:
@@ -43,9 +45,11 @@ In virtual box do the following:
 3. Once the installation is done issue the next command to ensure the configuration is picked up by the system kernel: lsmod | grep -i drbd
 
 4. If that does not work and nothing is found then issue the following command: sudo find / -name drbd.ko
-	The use of this command is to search the entire filesystem from root directory level to locate the location of the drbd.ko file 	which is the kernel file associated to drbd.ko
+	The use of this command is to search the entire filesystem from root directory level to locate the location of the drbd.ko file 	which is the kernel file associated to drbd.ko. Once the file is found, use the command insmod to add the appropriate kernel 		files.
 	
-5. Once the first four steps are done it's now time for the steps of configuration. Change your directory to /etc and you should find drbd.conf, this is the sample configuration for you to fill in; in addition there is a directory called drbd.d. At this point you should now copy the drbd.conf file into the drbd.d directory
+5. Once the first four steps are done it's now time for the steps of configuration. Change your directory to /etc and you should find drbd.conf, this is the sample configuration for you to fill in; in addition there is a directory called drbd.d. At this point you should now copy the drbd.conf file into the drbd.d directory.
+
+
 
 6. Open the file global_common.conf, create a backup of this file before editing it. And then insert the following into the file
 global {
@@ -57,22 +61,35 @@ common {
   }
 }
 
+#global_common.conf file troubleshooting
+Ensure the file path is exact to your files such as "/etc/drbd.d/global_common.conf" do not have a file path which is incomplete as this will result in a failure to load the file up 
+
 Protocol C is one of three protocols which DRBD can use. In our case the use of protocol C is important because it is asynchronous data transfer.
 
 7. Open the .res file which can have any name of your choice on the start of it for example: name.res. You should then add the following data:
 
-global { 
-	usage-count no;
-}
-common {
-	protocol C; - Remember to always end your statements with the semi-colon otherwise you will get errors
-}
 resource (name of resource) {
-	on (hostname of your VM) {
-		device (name of device);
-		disk (name of disk used);
+device (name of device);
+disk (name of disk used);
+meta-disk internal;
+protocol C;
+	on (hostname of your first VM) {
+	address: (YOUR IP ADDRESS);
+	meta-disk internal;
+	}
+	on (hostname of your first VM) {
+	address: (YOUR IP ADDRESS);
+	meta-disk internal;
 	}
 }
+
+8. Once the configuration is done and all troubleshooting is finished, it is then time to create the metadata for the associated device before you can start the drbd service using the following command: (Use sudo if you're not in root) (This must be done on both nodes)
+
+sudo drbdaddm create-md drbd0
+
+It is then time process the command to start the service again on BOTH NODES: sudo systemctl start drbd
+
+
 
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
