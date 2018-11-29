@@ -121,7 +121,9 @@ https://www.quora.com/What-is-a-Linux-block-device
 
 https://www.youtube.com/watch?time_continue=337&v=oGIpo1SoSdY
 
-#Troubleshooting connections:
+https://serverfault.com/questions/452693/drbd-status-uptodate-diskless
+
+#### Troubleshooting connections:
 
 Since there are ports involved, check the port availability and if the port is closed then allow it through the firewall
 
