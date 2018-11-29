@@ -49,8 +49,6 @@ In virtual box do the following:
 	
 5. Once the first four steps are done it's now time for the steps of configuration. Change your directory to /etc and you should find drbd.conf, this is the sample configuration for you to fill in; in addition there is a directory called drbd.d. At this point you should now copy the drbd.conf file into the drbd.d directory.
 
-
-
 6. Open the file global_common.conf, create a backup of this file before editing it. And then insert the following into the file
 global {
   usage-count yes;
@@ -85,10 +83,16 @@ protocol C;
 
 8. Once the configuration is done and all troubleshooting is finished, it is then time to create the metadata for the associated device before you can start the drbd service using the following command: (Use sudo if you're not in root) (This must be done on both nodes)
 
-sudo drbdaddm create-md drbd0
+sudo drbdaddm create-md (name of resource) - in my case it will be drbd0 
 
-It is then time process the command to start the service again on BOTH NODES: sudo systemctl start drbd
+It is then time process the command to start the service again on BOTH NODES: sudo systemctl start drbd and to ensure that the access to drbd will be constant after reboot ensure you enter: sudo systemctl enable drbd. This will create a symbolic link for you to access the drbd service easier. 
 
+9. Now that everything has been created and started it's now time to setup your primary server. Enter the following command to firstly ensure that the status of your drbd is active: drbdadm up (name of resource)
+
+10. Add the firewall rules to ensure the port number is open for your two nodes to communicate over the network: 
+
+### firewall rule: 
+firewall-cmd --permanent --add-rich-rules='rule family="ipv4" source address ="(Your IP address) port port="7788" protocol="tcp" accept
 
 
 #### Resources used
