@@ -122,7 +122,7 @@ If you really insist on the old /proc/drbd output you can find this within the s
 /sys/kernel/debug/drbd/resources/${resource_name}/connections/${hostname}/0/proc_drb
 
 Reference from: https://unix.stackexchange.com/questions/441313/drbd-no-output-of-cat-proc-drbd
-#### Resources used
+## Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
 
 https://www.atlantic.net/hipaa-compliant-database-hosting/how-to-configure-lvm-drbd/
