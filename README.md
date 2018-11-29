@@ -102,7 +102,17 @@ Ensure this line is added so that you're able to keep your kernel file included 
 
 After every set of changes make sure to update the drbd service
 
-If resource is open and you can't reset metadata to reconfigure the VMs then detach the 
+If resource is open and you can't reset metadata to reconfigure the VMs then detach the block device using the command drbdadm detach (name of server)
+
+#### If the server has another volume occupied and you want to reconfigure to assign as primary, do the following for a clean restart:
+
+1. Detach the server and bring it down using drbdadm
+
+2. Create the metadata for the block device e.g. drbdadm create-md drbd0
+
+3. Bring the block device up using drbd
+
+4. Assign as primary. If there's a fault then use the --force switch
 
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
