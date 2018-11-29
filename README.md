@@ -127,6 +127,8 @@ https://serverfault.com/questions/452693/drbd-status-uptodate-diskless
 
 https://lists.gt.net/drbd/users/27942
 
+https://serverfault.com/questions/804217/drbd-on-raw-disk-block-device
+
 #### Troubleshooting connections:
 
 Since there are ports involved, check the port availability and if the port is closed then allow it through the firewall
