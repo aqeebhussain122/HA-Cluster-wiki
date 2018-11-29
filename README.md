@@ -114,6 +114,14 @@ If resource is open and you can't reset metadata to reconfigure the VMs then det
 
 4. Assign as primary. If there's a fault then use the --force switch
 
+# IMPORTANT - FOR USERS OF VERSION 9
+The /proc/drbd file has been dropped in the DRBD 9.x releases. You should instead use drbdadm status to get the current state of the DRBD resources.
+
+If you really insist on the old /proc/drbd output you can find this within the sysfs now. Note that this is per connection only. It is located at:
+
+/sys/kernel/debug/drbd/resources/${resource_name}/connections/${hostname}/0/proc_drb
+
+Reference from: https://unix.stackexchange.com/questions/441313/drbd-no-output-of-cat-proc-drbd
 #### Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
 
