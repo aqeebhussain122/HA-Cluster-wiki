@@ -153,6 +153,7 @@ https://hk.saowen.com/a/4863a03aade28300f5646ef42eb1c04e7ec107620941030757dbfb5a
 
 https://serverfault.com/questions/870213/how-to-get-drbd-nodes-out-of-connection-state-standalone-and-wfconnection
 
+https://stackoverflow.com/questions/45998076/an-explanation-of-drbd-protocol-c?rq=1
 #### Troubleshooting connections:
 
 Since there are ports involved, check the port availability and if the port is closed then allow it through the firewall
