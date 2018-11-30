@@ -151,6 +151,8 @@ https://serverfault.com/questions/804217/drbd-on-raw-disk-block-device
 
 https://hk.saowen.com/a/4863a03aade28300f5646ef42eb1c04e7ec107620941030757dbfb5a6c8ca541
 
+https://serverfault.com/questions/870213/how-to-get-drbd-nodes-out-of-connection-state-standalone-and-wfconnection
+
 #### Troubleshooting connections:
 
 Since there are ports involved, check the port availability and if the port is closed then allow it through the firewall
