@@ -33,7 +33,7 @@ rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 3. Install drbd
 yum install drbd90-utils kmod-drbd90
 
-Ensuring the modules at boot, ensure you can access your root account and enter the following command: echo drb > /etc/modules-load.d/drbd.conf 
+Ensuring the modules at boot, ensure you can access your root account and enter the following command: echo drbd > /etc/modules-load.d/drbd.conf 
 
 (Do this for both nodes)
 A seperate disk will be needed for DRDB as it is an entire block device which is what we need
