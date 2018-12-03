@@ -160,3 +160,36 @@ Since there are ports involved, check the port availability and if the port is c
 
 #### To further understand LVMs consult this guide:
 https://www.howtoforge.com/linux_lvm
+
+# Adding pacemaker into HA cluster
+Pacemaker is a cluster resource manager used within HA, pacemaker uses scripts and health checks to monitor the progress and health of the nodes which are used. 
+
+Pacemaker does not work by itself, it works alongside other services such as corosync which is the messaging service that works between nodes. 
+
+1. Install the required cluster software and tools:
+
+yum install -y pacemaker pcs psmisc policycoreutils-python
+
+(If applicable to your setup then disable the firewall)
+
+2. systemctl start pcsd.service && systemctl enable pcsd.service - This will allow the nodes including the pcs daemon to start up on boot. The use of this daemon works with the pcs cli to synchronize the corosync config across all nodes 
+
+3. Login to the machines using the command: pcs cluster auth (node 1 name) (node 2 name)
+The corosync creates a default account called hacluster, ensure to setup a password for it before trying to login to anything. 
+
+4. You will be prompted
+
+### Troubleshooting
+Check if the associated process is running using: ps -ef grep pscd
+
+You should see output of a ruby process. 
+
+If your login brings out errors then use the --debug option to be able to see the problem. From my experience of a connection failure was due to a lack of connectivity. The hostnames entered could not see each other due to lack of entries in /etc/hosts. Ensure to enter data which you would like to use for the purpose of this 
+
+
+### References
+https://www.suse.com/documentation/sle-ha-12/singlehtml/book_sleha_techguides/book_sleha_techguides.html#sec_ha_quick_nfs_usagescenario
+
+http://jensd.be/186/linux/use-drbd-in-a-cluster-with-corosync-and-pacemaker-on-centos-7
+
+https://clusterlabs.org/pacemaker/doc/en-US/Pacemaker/2.0/pdf/Clusters_from_Scratch/Pacemaker-2.0-Clusters_from_Scratch-en-US.pdf
