@@ -121,6 +121,19 @@ If you really insist on the old /proc/drbd output you can find this within the s
 
 /sys/kernel/debug/drbd/resources/${resource_name}/connections/${hostname}/0/proc_drb
 
+### Final manual failover test 
+
+1. Mount the block device on the primary node on the mount table.
+	Make a filesystem for the block device if you have not done so yet. 
+
+2. List the contents of the /mnt table (It should be the contents of the block device)
+
+3. Unmount from the current primary and change the current primary device into a secondary.
+
+4. Change the previous secondary device into a primary and mount the contents of the drbd block device.
+
+If all is successful then you have successfully implemented drbd with a manual failover.
+
 Reference from: https://unix.stackexchange.com/questions/441313/drbd-no-output-of-cat-proc-drbd
 ## Resources used
 http://prolinuxhub.com/building-simple-drbd-cluster-on-linux-centos-6-5/
@@ -184,7 +197,7 @@ Check if the associated process is running using: ps -ef grep pscd
 
 You should see output of a ruby process. 
 
-If your login brings out errors then use the --debug option to be able to see the problem. From my experience of a connection failure was due to a lack of connectivity. The hostnames entered could not see each other due to lack of entries in /etc/hosts. Ensure to enter data which you would like to use for the purpose of this 
+If your login brings out errors then use the --debug option to be able to see the problem. From my experience of a connection failure was due to a lack of connectivity. The hostnames entered could not see each other due to lack of entries in /etc/hosts. 
 
 
 ### References
